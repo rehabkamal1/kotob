@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://math-prep-grade1.vercel.app/sitemap.xml
+Sitemap: https://kotob-xi.vercel.app/sitemap.xml
