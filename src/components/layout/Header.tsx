@@ -25,10 +25,10 @@ export const Header: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-base md:text-lg text-slate-800 tracking-tight leading-tight">
-                  تحضير رياضيات
+                  تحضير وكتب الرياضيات
                 </span>
                 <span className="text-[11px] md:text-xs text-indigo-600 font-medium">
-                  الصف الأول الابتدائي - مصر
+                  الابتدائي والإعدادي - مصر
                 </span>
               </div>
             </Link>

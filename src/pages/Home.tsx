@@ -58,16 +58,16 @@ export const Home: React.FC = () => {
         <div className="relative max-w-5xl mx-auto px-6 py-14 sm:py-20 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs sm:text-sm font-medium mb-6 text-indigo-100 border border-white/20">
             <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>المنهج المصري الحديث 2.0 - الصف الأول الابتدائي</span>
+            <span>المنهج المصري الحديث - الصف الأول الابتدائي والأول الإعدادي</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-            تحضير رياضيات <br className="hidden sm:inline" />
-            <span className="text-amber-300">الصف الأول الابتدائي</span>
+            تحضير وكتب الرياضيات <br className="hidden sm:inline" />
+            <span className="text-amber-300">الابتدائي والإعدادي</span>
           </h1>
 
           <p className="text-base sm:text-xl text-indigo-100 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
-            كل ما تحتاجه من خطط دروس يومية، نواتج تعلم، استراتيجيات تدريس، وأوراق عمل أصلية منظمة ومجانية بصيغة PDF لكل من الترمين الأول والثاني.
+            كل ما تحتاجه من خطط دروس يومية، الكتب المدرسية الرسمية، وحل كتب التقييمات والواجبات الأسبوعية بصيغة PDF مجانية للترمين الأول والثاني.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">

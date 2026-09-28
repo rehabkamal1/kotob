@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
               <span className="font-extrabold text-slate-800 text-lg">
-                تحضير رياضيات الصف الأول الابتدائي
+                تحضير وكتب رياضيات الابتدائي والإعدادي
               </span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed max-w-md">
-              منصة تعليمية مجانية متخصصة في توفير خطط ونماذج تحضير مادة الرياضيات للصف الأول الابتدائي وفق المناهج المصرية المعتمدة، بهدف مساعدة المعلمين والمعلمات وأولياء الأمور على أداء رسالتهم السامية بيسر وسهولة.
+              منصة تعليمية مجانية متخصصة في توفير خطط ونماذج تحضير وكتب مادة الرياضيات للمرحلتين الابتدائية والإعدادية وفق المناهج المصرية المعتمدة، بهدف مساعدة المعلمين والمعلمات والطلاب وأولياء الأمور.
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <ShieldCheck className="w-4 h-4 text-emerald-500" />
@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            جميع الحقوق محفوظة © {currentYear} - تحضير رياضيات الصف الأول الابتدائي (مصر).
+            جميع الحقوق محفوظة © {currentYear} - تحضير وكتب رياضيات الابتدائي والإعدادي (مصر).
           </p>
           <div className="flex items-center gap-1 text-slate-400">
             <span>صُنع لدعم العملية التعليمية</span>

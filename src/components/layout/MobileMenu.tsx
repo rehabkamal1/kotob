@@ -42,8 +42,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <span className="text-lg">📐</span>
             </div>
             <div>
-              <span className="font-bold text-slate-800 text-base block">تحضير رياضيات</span>
-              <span className="text-[11px] text-indigo-600 block">الصف الأول الابتدائي</span>
+              <span className="font-bold text-slate-800 text-base block">تحضير وكتب الرياضيات</span>
+              <span className="text-[11px] text-indigo-600 block">الابتدائي والإعدادي</span>
             </div>
           </div>
           <button

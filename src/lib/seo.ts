@@ -16,7 +16,7 @@ export function updateSEO({
   schema,
 }: SEOProps) {
   // Update Title
-  const siteSuffix = ' | تحضير رياضيات أولى ابتدائي';
+  const siteSuffix = ' | تحضير وكتب رياضيات الابتدائي والإعدادي';
   const fullTitle = title.includes(siteSuffix) ? title : `${title}${siteSuffix}`;
   document.title = fullTitle;
 
