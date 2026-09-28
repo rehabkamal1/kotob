@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   Eye,
@@ -17,8 +17,10 @@ import lessonsData from '../data/lessons.json';
 import { Lesson } from '../types';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { LessonCard } from '../components/cards/LessonCard';
+import { AdPlaceholder } from '../components/ads/AdPlaceholder';
 import { ContentAd } from '../components/ads/ContentAd';
 import { BottomAd } from '../components/ads/BottomAd';
+import { DownloadModal } from '../components/common/DownloadModal';
 import { updateSEO } from '../lib/seo';
 import { formatDateArabic } from '../lib/utils';
 import { trackEvent } from '../lib/analytics';
@@ -28,6 +30,8 @@ const lessons = lessonsData as Lesson[];
 
 export const LessonDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string; termSlug?: string }>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalAction, setModalAction] = useState<'view' | 'download'>('view');
 
   // Support finding lesson by slug
   const lesson = lessons.find((l) => l.slug === slug);
@@ -35,8 +39,8 @@ export const LessonDetails: React.FC = () => {
   useEffect(() => {
     if (lesson) {
       const canonicalPath = `/preparation/${lesson.termSlug}/${lesson.slug}`;
-      const pageTitle = `${lesson.title} للصف الأول الابتدائي PDF`;
-      const metaDescription = `${lesson.description} تحميل ومشاهدة مباشرة لملف تحضير مادة الرياضيات للصف الأول الابتدائي (${lesson.term}) بصيغة PDF.`;
+      const pageTitle = `${lesson.title} - ${lesson.grade} PDF`;
+      const metaDescription = `${lesson.description} تحميل ومشاهدة مباشرة لملف ${lesson.title} (${lesson.grade} - ${lesson.term}) بصيغة PDF.`;
 
       // Structured Data for Google (BreadcrumbList + Article Schema)
       const schema = {
@@ -74,11 +78,11 @@ export const LessonDetails: React.FC = () => {
             mainEntityOfPage: `${window.location.origin}${canonicalPath}`,
             author: {
               '@type': 'Organization',
-              name: 'تحضير رياضيات الصف الأول الابتدائي',
+              name: 'تحضير وكتب رياضيات الابتدائي والإعدادي',
             },
             publisher: {
               '@type': 'Organization',
-              name: 'تحضير رياضيات الصف الأول الابتدائي',
+              name: 'تحضير وكتب رياضيات الابتدائي والإعدادي',
             },
           },
         ],
@@ -117,6 +121,8 @@ export const LessonDetails: React.FC = () => {
       lesson_title: lesson.title,
       term: lesson.term,
     });
+    setModalAction('download');
+    setIsModalOpen(true);
   };
 
   const handleViewClick = () => {
@@ -126,6 +132,8 @@ export const LessonDetails: React.FC = () => {
       lesson_title: lesson.title,
       term: lesson.term,
     });
+    setModalAction('view');
+    setIsModalOpen(true);
   };
 
   const handleShare = () => {
@@ -229,40 +237,41 @@ export const LessonDetails: React.FC = () => {
           </div>
         </div>
 
+        {/* Pre-Action Ad Slot */}
+        <div className="mb-6">
+          <AdPlaceholder slotName="إعلان مخصص قبل التحميل والمشاهدة" format="horizontal" />
+        </div>
+
         {/* Clear Action Buttons (Clearly distinguished from ads) */}
         <div className="p-6 rounded-2xl bg-indigo-50/60 border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
           <div>
             <h3 className="font-bold text-slate-800 text-base mb-1">
-              الوصول المباشر لملف التحضير عبر Google Drive
+              الوصول لملف {lesson.title} عبر Google Drive
             </h3>
             <p className="text-xs sm:text-sm text-slate-500">
-              الملف متاح للقراءة الفورية أو التنزيل المباشر بصيغة PDF قابلة للطباعة فورًا.
+              الملف متاح للقراءة الفورية أو التنزيل المباشر بصيغة PDF قابلة للطباعة فورًا ({lesson.fileSize}).
             </p>
           </div>
 
           <div className="flex flex-col xs:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
-            <a
-              href={lesson.pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
               onClick={handleViewClick}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:shadow focus:ring-4 focus:ring-indigo-300"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:shadow focus:ring-4 focus:ring-indigo-300 cursor-pointer"
             >
               <Eye className="w-4 h-4" />
               <span>مشاهدة الملف (Viewer)</span>
               <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            </button>
 
-            <a
-              href={lesson.downloadUrl || lesson.pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
               onClick={handleDownloadClick}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-indigo-700 border border-indigo-200 font-bold text-sm transition-all shadow-xs focus:ring-4 focus:ring-indigo-100"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-indigo-700 border border-indigo-200 font-bold text-sm transition-all shadow-xs focus:ring-4 focus:ring-indigo-100 cursor-pointer"
             >
               <Download className="w-4 h-4 text-indigo-600" />
               <span>تحميل PDF</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -369,6 +378,17 @@ export const LessonDetails: React.FC = () => {
 
       {/* Bottom Ad */}
       <BottomAd />
+
+      {/* Preparation & Download Gateway Ad Modal */}
+      <DownloadModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        fileTitle={lesson.title}
+        fileSize={lesson.fileSize}
+        pages={lesson.pages}
+        targetUrl={modalAction === 'download' ? (lesson.downloadUrl || lesson.pdfUrl) : lesson.pdfUrl}
+        actionType={modalAction}
+      />
     </div>
   );
 };
