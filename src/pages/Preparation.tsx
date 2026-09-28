@@ -116,7 +116,7 @@ export const Preparation: React.FC = () => {
               <select
                 value={selectedUnit}
                 onChange={(e) => setSelectedUnit(e.target.value)}
-                className="bg-slate-100 border-none text-xs font-semibold text-slate-700 py-2 px-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full sm:w-auto bg-slate-100 border-none text-xs font-semibold text-slate-700 py-2.5 px-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 aria-label="تصفية حسب الوحدة التعليمية"
               >
                 <option value="all">كافة الوحدات التعليمية</option>

@@ -240,13 +240,13 @@ export const LessonDetails: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-col xs:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <a
               href={lesson.pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleViewClick}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition-all shadow-sm hover:shadow focus:ring-4 focus:ring-indigo-300"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:shadow focus:ring-4 focus:ring-indigo-300"
             >
               <Eye className="w-4 h-4" />
               <span>مشاهدة الملف (Viewer)</span>

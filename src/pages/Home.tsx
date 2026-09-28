@@ -70,10 +70,10 @@ export const Home: React.FC = () => {
             كل ما تحتاجه من خطط دروس يومية، نواتج تعلم، استراتيجيات تدريس، وأوراق عمل أصلية منظمة ومجانية بصيغة PDF لكل من الترمين الأول والثاني.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <Link
               to="/preparation"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-base transition-all shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white/40"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white/40"
             >
               <BookOpen className="w-5 h-5 text-indigo-600" />
               <span>تصفح ملفات التحضير</span>
@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
 
             <Link
               to="/search"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-indigo-500/40 hover:bg-indigo-500/60 backdrop-blur-md text-white font-bold text-base border border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-indigo-500/40 hover:bg-indigo-500/60 backdrop-blur-md text-white font-bold text-sm sm:text-base border border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
             >
               <span>البحث السريع في الدروس</span>
             </Link>
