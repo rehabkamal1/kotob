@@ -16,6 +16,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     { to: '/preparation/term-1/full-prep-math-grade-1-2025-2026', label: 'دفتر التحضير الكامل (الترم الأول)', icon: BookOpen },
     { to: '/preparation/term-1', label: 'تحضير الترم الأول', icon: BookOpen },
     { to: '/preparation/term-2', label: 'تحضير الترم الثاني', icon: BookOpen },
+    { to: '/preparation/term-1/math-prep-1-school-book-term-1', label: 'كتاب المدرسة (أولى إعدادي)', icon: BookOpen },
+    { to: '/preparation/term-1/math-prep-1-evaluations-book-term-1', label: 'كتاب التقييمات (أولى إعدادي)', icon: FileCheck2 },
     { to: '/preparation', label: 'كافة ملفات التحضير', icon: BookOpen },
     { to: '/search', label: 'البحث عن درس', icon: Search },
     { to: '/about', label: 'من نحن', icon: Info },

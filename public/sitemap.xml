@@ -120,4 +120,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://kotob-xi.vercel.app/preparation/term-1/math-prep-1-school-book-term-1</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kotob-xi.vercel.app/preparation/term-1/math-prep-1-evaluations-book-term-1</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

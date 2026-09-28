@@ -197,6 +197,93 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Grade 7 / Prep 1 Special Section */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-200">
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              جديد: مرحلة التعليم الإعدادي
+            </span>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-800 mt-2">
+              رياضيات الصف الأول الإعدادي (كتاب المدرسة &amp; كتاب التقييمات)
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Card 1: School Book */}
+          <div className="bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-white rounded-3xl p-6 sm:p-7 border-2 border-blue-300 shadow-soft flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-3 left-3 bg-blue-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">
+              كتاب الوزارة 📘
+            </div>
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold text-blue-800 mb-2">
+                <BookOpen className="w-4 h-4 text-blue-600" />
+                <span>الصف الأول الإعدادي - الترم الأول</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                كتاب المدرسة رياضيات الصف الأول الإعدادي المنهج الجديد
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                كتاب الطالب المدرسي المعتمد والكامل لمادة الرياضيات يشمل وحدات الجبر والإحصاء والهندسة مع كافة الشروحات والتدريبات الرسمية.
+              </p>
+              <div className="flex items-center gap-3 text-xs text-slate-500 mb-4 pb-4 border-b border-blue-200/60">
+                <span className="font-semibold text-slate-700">📄 168 صفحة</span>
+                <span>•</span>
+                <span className="font-semibold text-slate-700">💾 حجم: 34 MB</span>
+                <span>•</span>
+                <span className="text-blue-700 font-bold">المنهج الكامل</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                to="/preparation/term-1/math-prep-1-school-book-term-1"
+                className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm transition-colors shadow-sm"
+              >
+                <span>مشاهدة وتحميل كتاب المدرسة</span>
+                <ArrowLeft className="w-4 h-4 rtl:rotate-0 ltr:rotate-180" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 2: Evaluations Book */}
+          <div className="bg-gradient-to-br from-teal-500/10 via-teal-500/5 to-white rounded-3xl p-6 sm:p-7 border-2 border-teal-300 shadow-soft flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-3 left-3 bg-teal-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">
+              التقييمات الأسبوعية 📝
+            </div>
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold text-teal-800 mb-2">
+                <FileCheck2 className="w-4 h-4 text-teal-600" />
+                <span>المهام الأدائية وأعمال السنة 2026/2027</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                كتاب التقييمات والأداءات الأسبوعية أولى إعدادي الترم الأول
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                كراسة الواجبات المنزلية والتقييمات الأسبوعية والمهام المعتمدة لقياس نواتج التعلم التراكمية لمادة الرياضيات للمرحلة الإعدادية.
+              </p>
+              <div className="flex items-center gap-3 text-xs text-slate-500 mb-4 pb-4 border-b border-teal-200/60">
+                <span className="font-semibold text-slate-700">📄 112 صفحة</span>
+                <span>•</span>
+                <span className="font-semibold text-slate-700">💾 حجم: 28 MB</span>
+                <span>•</span>
+                <span className="text-teal-700 font-bold">PDF عالي الجودة</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                to="/preparation/term-1/math-prep-1-evaluations-book-term-1"
+                className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs sm:text-sm transition-colors shadow-sm"
+              >
+                <span>مشاهدة وتحميل كتاب التقييمات</span>
+                <ArrowLeft className="w-4 h-4 rtl:rotate-0 ltr:rotate-180" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Terms Showcase (حسب الترم) */}
       <section className="space-y-6">
         <div className="text-center max-w-2xl mx-auto">
